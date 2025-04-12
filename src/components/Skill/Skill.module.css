@@ -1,0 +1,82 @@
+@import "../../vars.css";
+
+.container {
+  padding: 90px 10%;
+  color: var(--color-text);
+}
+
+.title {
+  font-size: 64px;
+  font-weight: 900;
+  margin-bottom: 40px;
+  font-family: var(--font-poppins);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 1) 70%,
+    rgba(255, 255, 255, 0) 120%
+  );
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+.skillGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 30px;
+}
+
+.skillCard {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  animation: float 3s ease-in-out infinite;
+}
+
+.skillCard:hover {
+  transform: translateY(-10px) scale(1.05);
+}
+
+.skillLogo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.skillCard p {
+  font-size: 18px;
+  font-weight: 600;
+  font-family: var(--font-roboto);
+}
+
+/* Floating Animation */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@media screen and (max-width: 830px) {
+  .title {
+    font-size: 48px;
+    text-align: center;
+  }
+
+  .skillCard {
+    padding: 16px;
+  }
+
+  .skillLogo {
+    width: 50px;
+    height: 50px;
+  }
+}
